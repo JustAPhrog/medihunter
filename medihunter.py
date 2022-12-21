@@ -3,6 +3,7 @@ this is a startpoint for adding new features
 """
 
 import json
+import re
 import time
 from datetime import datetime, timedelta
 from typing import Callable, List
@@ -103,6 +104,29 @@ def validate_arguments(**kwargs) -> bool:
         return False
     return True
 
+@click.command()
+@click.option("--clinic-name", required=True , show_default=True)
+@click.option("--user", prompt=True, envvar='MEDICOVER_USER')
+@click.password_option(confirmation_prompt=False, envvar='MEDICOVER_PASS')
+def get_clinic(user, password, clinic_name):
+    med_session = login(user, password)
+    if not med_session:
+        return
+
+    clinics = med_session.get_all_clinics()
+    found = False
+    for clinic in clinics:
+        if re.search(clinic_name, clinic['Value']):
+            found = True
+            value = clinic['Value']
+            key = clinic['Key']
+            print(f'{value}: {key}')
+    if not found:
+        click.echo(
+            click.style(
+                f'There is no clinic which contains: {clinic_name}', fg='red'
+            )
+        )
 
 @click.command()
 @click.option("--region", "-r", required=True, show_default=True)
@@ -277,6 +301,7 @@ medihunter.add_command(show_params)
 medihunter.add_command(find_appointment)
 medihunter.add_command(my_plan)
 medihunter.add_command(my_appointments)
+medihunter.add_command(get_clinic)
 
 
 if __name__ == "__main__":

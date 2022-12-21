@@ -416,6 +416,24 @@ class MedicoverSession:
         return appointments
 
 
+    def get_all_clinics(self):
+        """Get all clinics """
+        response = self.session.post(
+            BASE_URL + "/api/Maps/Clinics/ClinicsNames",
+            headers={
+                # Makes the response come as json.
+                "X-Requested-With": "XMLHttpRequest",
+                "Host": BASE_HOST,
+                "Origin": BASE_URL,
+                "User-Agent": USER_AGENT,
+            },
+        )
+        response.raise_for_status()
+        response_json = response.json()
+
+        return response_json
+
+
 def load_available_search_params(field_name):
     FIELDS_NAMES = {
         "specialization": "availableSpecializations",
@@ -439,3 +457,11 @@ def load_available_search_params(field_name):
     params = json.loads(params_file_content)
 
     return params[field_name]
+
+
+if __name__ == '__main__':
+    user = input('User')
+    password = input('password')
+    med_session = MedicoverSession(user, password)
+
+    med_session.log_in()
