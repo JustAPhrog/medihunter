@@ -59,16 +59,16 @@ medihunter show-params -f region
 
 ### find-appointment
 
-Poszukajmy endokrynologa
+Poszukajmy endokrynologa w Warszawie
 
 ```bash
-medihunter find-appointment -s 27962
+medihunter find-appointment -r 204 -s 27962
 ```
 
 Oczywiście znalezienie wizyty do endokrynologa nie jest takie proste, więc ustawmy żeby wyszukiwarka sprawdzała czy jest coś dostępne co 5 minut
 
 ```bash
-medihunter find-appointment -s 27962 -i 5
+medihunter find-appointment -r 204 -s 27962 -i 5
 ```
 
 a może chcemy poszukać konkretnych endokrynolgów o ID: 12345 i 0987? **tylko w medicover_pushover.py**
@@ -80,7 +80,13 @@ medihunter find-appointment -s 27962 -o 12345 -o 0987
 a może po prostu szukamy dowolnego internisty w przychodniach blisko nas w Atrium i na Prostej? **tylko w medicover_pushover.py**
 
 ```bash
-medihunter find-appointment -s 9 -c 174 -c 49088
+medihunter find-appointment -r 204 -s 9 -c 174 -c 49088
+```
+
+Poszukiwania endokrynologa dziecięcego w Warszawie co 3 minuty i wysyła powiadomienie do aplikacji pushover.
+
+```bash
+medihunter find-appointment -s 4806 -r 204 -n pushover -i 3
 ```
 
 Lub można dodać bezpośrednio do Crontaba jak poniżej **wpis w cronie działa tylko z medicover_pushover.py**
