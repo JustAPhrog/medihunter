@@ -1,6 +1,5 @@
 {
-    "availableRegions": [
-        {
+    "availableRegions": [{
             "text": "(Wybierz)",
             "id": -2
         },
@@ -97,15 +96,12 @@
             "id": 205
         }
     ],
-    "availableBookingTypes": [
-        {
-            "text": "Konsultacja",
-            "id": 2
-        }
-    ],
+    "availableBookingTypes": [{
+        "text": "Konsultacja",
+        "id": 2
+    }],
     "availableDiagnosticProcedures": [],
-    "availableSpecializations": [
-        {
+    "availableSpecializations": [{
             "text": "(Wybierz)",
             "id": -2
         },
@@ -210,6 +206,10 @@
             "id": 32
         },
         {
+            "text": "Ginekolog dziecięcy",
+            "id": 4806
+        },
+        {
             "text": "Hepatolog",
             "id": 54
         },
@@ -254,12 +254,12 @@
             "id": 192
         },
 
-	{
+        {
             "text": "Laryngolog dzieci",
             "id": 100
         },
 
-	{
+        {
             "text": "Laryngolog dzieci - porada telefoniczna",
             "id": 44068
         },
@@ -473,8 +473,7 @@
             "id": 97
         }
     ],
-    "availableClinics": [
-        {
+    "availableClinics": [{
             "text": "(Dowolne)",
             "id": -1
         },
@@ -482,7 +481,7 @@
             "text": "Centrum Medicover Aleje Jerozolimskie",
             "id": 12292
         },
-	 {
+        {
             "text": "Centrum Medicover Elektronowa",
             "id": 83484
         },
@@ -535,8 +534,7 @@
             "id": 29212
         }
     ],
-    "availableLanguages": [
-        {
+    "availableLanguages": [{
             "text": "(Dowolny)",
             "id": -1
         },
@@ -565,8 +563,7 @@
             "id": 16
         }
     ],
-    "availableDoctors": [
-        {
+    "availableDoctors": [{
             "text": "(Dowolny)",
             "id": -1
         },
@@ -698,7 +695,7 @@
             "text": "Kasprzycka Katarzyna",
             "id": 102422
         },
-	{
+        {
             "text": "Kenig Dagmara",
             "id": 101428
         },
@@ -914,7 +911,7 @@
             "text": "Wretowska Dorota",
             "id": 264638
         },
-	{
+        {
             "text": "Zawadowski Jacek",
             "id": 35
         },
