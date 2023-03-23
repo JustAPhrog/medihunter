@@ -80,7 +80,7 @@ medihunter find-appointment -s 27962 -o 12345 -o 0987
 a może po prostu szukamy dowolnego internisty w przychodniach blisko nas w Atrium i na Prostej? **tylko w medicover_pushover.py**
 
 ```bash
-medihunter find-appointment -r 204 -s 9 -c 174 -c 49088
+medihunter find-appointment -r 204 -s 9 -c 174 -c 49088 -c 174
 ```
 
 Poszukiwania endokrynologa dziecięcego w Warszawie co 3 minuty i wysyła powiadomienie do aplikacji pushover.
